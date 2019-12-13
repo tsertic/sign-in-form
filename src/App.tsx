@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
+import Form from './components/Form';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <Fragment>
       <Navbar />
-    </div>
+      <Form />
+    </Fragment>
   );
 };
 

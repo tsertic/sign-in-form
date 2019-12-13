@@ -29,12 +29,12 @@ const styles = (theme: any) => {
       marginLeft: 0,
       width: '100%',
       [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing.unit,
+        marginLeft: theme.spacing(),
         width: 'auto'
       }
     },
     searchIcon: {
-      width: theme.spacing.unit * 9,
+      width: theme.spacing(9),
       height: '100%',
       position: 'absolute' as 'absolute',
       display: 'flex',
@@ -46,8 +46,8 @@ const styles = (theme: any) => {
       width: '100%'
     },
     inputInput: {
-      padding: theme.spacing.unit,
-      paddingLeft: theme.spacing.unit * 10,
+      padding: theme.spacing(),
+      paddingLeft: theme.spacing(10),
       transition: theme.transitions.create('width'),
       width: '100%',
       [theme.breakpoints.up('sm')]: {

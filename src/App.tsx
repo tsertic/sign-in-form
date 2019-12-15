@@ -1,15 +1,20 @@
-import React, { Fragment } from 'react';
-import './App.css';
+import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 import Form from './components/Form';
+import PageContent from './components/PageContent';
+import ThemeProvider from './context/theme.context';
 
-const App: React.FC = () => {
-  return (
-    <Fragment>
-      <Navbar />
-      <Form />
-    </Fragment>
-  );
-};
+class App extends Component {
+  render() {
+    return (
+      <ThemeProvider>
+        <PageContent>
+          <Navbar />
+          <Form />
+        </PageContent>
+      </ThemeProvider>
+    );
+  }
+}
 
 export default App;

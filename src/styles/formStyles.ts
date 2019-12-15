@@ -4,7 +4,7 @@ const styles = (theme: any) => {
       width: 'auto',
       marginLeft: theme.spacing(3),
       marginRight: theme.spacing(3),
-      [theme.breakpoints.up('md')]: {
+      [theme.breakpoints.up('sm')]: {
         width: '400px',
         marginLeft: 'auto',
         marginRight: 'auto'

@@ -10,37 +10,45 @@ import {
   InputBase
 } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
-const Navbar = (props: any) => {
-  console.log(props);
-  const { classes } = props;
-  return (
-    <div className={classes.root}>
-      <AppBar position="static" color="primary">
-        <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit">
-            <span>FR</span>
-          </IconButton>
-          <Typography variant="h6" color="inherit">
-            App Title
-          </Typography>
-          <Switch />
-          <div className={classes.grow} />
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
+import { ThemeContext } from './../context/theme.context';
+
+class Navbar extends React.Component<{ classes: any }, {}> {
+  static contextType = ThemeContext;
+  constructor(props: any) {
+    super(props);
+  }
+  render() {
+    console.log(this.context);
+    const { classes } = this.props;
+    return (
+      <div className={classes.root}>
+        <AppBar position="static" color="primary">
+          <Toolbar>
+            <IconButton className={classes.menuButton} color="inherit">
+              <span>FR</span>
+            </IconButton>
+            <Typography variant="h6" color="inherit">
+              App Title
+            </Typography>
+            <Switch />
+            <div className={classes.grow} />
+            <div className={classes.search}>
+              <div className={classes.searchIcon}>
+                <SearchIcon />
+              </div>
+              <InputBase
+                placeholder="Search..."
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput
+                }}
+              />
             </div>
-            <InputBase
-              placeholder="Search..."
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput
-              }}
-            />
-          </div>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
-};
+          </Toolbar>
+        </AppBar>
+      </div>
+    );
+  }
+}
 
 export default withStyles(styles)(Navbar);
